@@ -1,65 +1,157 @@
+"use client";
+
 import Image from "next/image";
+import { useState, useTransition } from "react";
+import { joinWaitlist } from "./actions";
 
 export default function Home() {
+  const [email, setEmail] = useState("");
+  const [joined, setJoined] = useState(false);
+  const [isPending, startTransition] = useTransition();
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMsg("");
+
+    if (email) {
+      startTransition(async () => {
+        const result = await joinWaitlist(email);
+        if (result.success) {
+          setJoined(true);
+          setEmail("");
+        } else {
+          setErrorMsg(result.message || "Something went wrong.");
+        }
+      });
+    }
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main className="flex min-h-screen flex-col items-center justify-center p-6 lg:p-24 relative overflow-hidden">
+      <div className="z-10 w-full max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24">
+        {/* Left Content */}
+        <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 max-w-2xl">
+          <div className="relative w-32 h-32 mb-4">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/logo-transparent.png"
+              alt="Deerly Logo"
+              fill
+              className="object-contain"
+              priority
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+
+          <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-black leading-[1.1]">
+            Grow your internal <span className="text-primary">Gratitude</span>{" "}
+            Garden.
+          </h1>
+
+          <p className="text-xl text-muted leading-relaxed max-w-lg">
+            Turn daily reflections into a thriving digital forest. Track your
+            streaks, get AI-powered depth insights, and cultivate a healthier
+            mind with Deerly.
+          </p>
+
+          <div className="w-full max-w-md pt-4">
+            {!joined ? (
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col sm:flex-row gap-3"
+              >
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 px-6 py-4 rounded-full border border-black/10 bg-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-black placeholder:text-muted/70"
+                />
+                <button
+                  type="submit"
+                  disabled={isPending}
+                  className="px-8 py-4 rounded-full bg-black text-white font-semibold hover:bg-black/80 transition-all shadow-lg hover:shadow-xl active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isPending ? "Joining..." : "Join Waitlist"}
+                </button>
+              </form>
+            ) : (
+              <div className="p-4 rounded-2xl bg-white/60 border border-green-200 text-green-800 flex items-center gap-3 animate-fade-in-up">
+                <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-semibold">You're on the list!</p>
+                  <p className="text-sm opacity-80">
+                    We'll notify you when we launch.
+                  </p>
+                </div>
+              </div>
+            )}
+            {errorMsg && (
+              <p className="mt-2 text-sm text-red-500 font-medium">
+                {errorMsg}
+              </p>
+            )}
+            <p className="mt-4 text-sm text-muted">
+              Get early access & exclusive founder rewards.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-8 w-full">
+            <div className="flex flex-col gap-1 sm:items-start items-center">
+              <span className="font-bold text-lg text-black">AI Insights</span>
+              <span className="text-sm text-muted text-center sm:text-left">
+                Deep analysis of your gratitude
+              </span>
+            </div>
+            <div className="flex flex-col gap-1 sm:items-start items-center">
+              <span className="font-bold text-lg text-black">Tree Growth</span>
+              <span className="text-sm text-muted text-center sm:text-left">
+                Visualize your progress
+              </span>
+            </div>
+            <div className="flex flex-col gap-1 sm:items-start items-center col-span-2 sm:col-span-1">
+              <span className="font-bold text-lg text-black">Streaks</span>
+              <span className="text-sm text-muted text-center sm:text-left">
+                Build a lasting habit
+              </span>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+
+        {/* Right Visual */}
+        <div className="flex-1 relative w-full flex justify-center lg:justify-end">
+          {/* Decorative Elements */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-primary/20 via-gold/10 to-transparent blur-3xl rounded-full -zA-10" />
+
+          <div className="relative z-10 w-[300px] sm:w-[350px] lg:w-[400px] aspect-[9/19.5] rotate-[-2deg] hover:rotate-0 transition-transform duration-500 ease-out">
+            <div className="absolute inset-0 bg-black rounded-[48px] shadow-2xl scale-[1.02] translate-y-2 opacity-20 blur-xl" />
+            <div className="relative h-full w-full rounded-[40px] border-8 border-black overflow-hidden shadow-2xl bg-white">
+              <Image
+                src="/screenshot.png"
+                alt="App Screenshot"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 400px"
+              />
+            </div>
+            {/* Glossy reflection effect */}
+            <div className="absolute inset-0 rounded-[40px] ring-1 ring-black/5 pointer-events-none" />
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }

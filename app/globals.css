@@ -1,26 +1,47 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Deerly Theme Colors */
+  --primary: #f46c2d;
+  --gold: #b28603;
+  --cream: #fdf7ef;
+  --lavender: #faf5fe;
+  --text-main: #000000;
+  --text-muted: #7f7c82;
+  --background: #fdf7ef;
+  --foreground: #000000;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-primary: var(--primary);
+  --color-gold: var(--gold);
+  --color-cream: var(--cream);
+  --color-lavender: var(--lavender);
+  --color-muted: var(--text-muted);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter), sans-serif;
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(135deg, var(--cream) 0%, var(--lavender) 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+  min-height: 100vh;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
 }
