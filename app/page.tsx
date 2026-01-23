@@ -42,15 +42,15 @@ export default function Home() {
             />
           </div>
 
-          <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-black leading-[1.1]">
+          <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-black leading-[1.1]">
             Grow your internal <span className="text-primary">Gratitude</span>{" "}
             Garden.
           </h1>
 
           <p className="text-xl text-muted leading-relaxed max-w-lg">
             Turn daily reflections into a thriving digital forest. Track your
-            streaks, get AI-powered depth insights, and cultivate a healthier
-            mind with Deerly.
+            streaks, get Smart depth insights, and cultivate a healthier mind
+            with Deerly.
           </p>
 
           <div className="w-full max-w-md pt-4">
@@ -111,9 +111,25 @@ export default function Home() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-8 w-full">
             <div className="flex flex-col gap-1 sm:items-start items-center">
-              <span className="font-bold text-lg text-black">AI Insights</span>
+              <span className="font-bold text-lg text-black">
+                Smart Evaluation
+              </span>
               <span className="text-sm text-muted text-center sm:text-left">
                 Deep analysis of your gratitude
+              </span>
+            </div>
+            <div className="flex flex-col gap-1 sm:items-start items-center">
+              <span className="font-bold text-lg text-black">
+                Audio Entries
+              </span>
+              <span className="text-sm text-muted text-center sm:text-left">
+                Transcribe moments instantly
+              </span>
+            </div>
+            <div className="flex flex-col gap-1 sm:items-start items-center">
+              <span className="font-bold text-lg text-black">Home Widgets</span>
+              <span className="text-sm text-muted text-center sm:text-left">
+                Keep gratitude close
               </span>
             </div>
             <div className="flex flex-col gap-1 sm:items-start items-center">
@@ -152,6 +168,21 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <footer className="w-full max-w-7xl relative z-10 mt-[20px] lg:mt-0 flex justify-center lg:justify-start gap-6">
+        <a
+          href="/privacy"
+          className="text-md hover:text-muted transition-colors underline decoration-dotted underline-offset-4"
+        >
+          Privacy Policy
+        </a>
+        <a
+          href="/terms-of-use"
+          className="text-md hover:text-muted transition-colors underline decoration-dotted underline-offset-4"
+        >
+          Terms of Use
+        </a>
+      </footer>
     </main>
   );
 }
