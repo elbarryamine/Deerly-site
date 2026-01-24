@@ -28,8 +28,8 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-6 lg:p-24 relative overflow-hidden">
-      <div className="z-10 w-full max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24">
+    <main className="flex flex-col items-center justify-center p-5 lg:p-24 gap-20">
+      <section className="w-full max-w-5xl flex flex-col lg:flex-row items-center justify-between gap-20">
         {/* Left Content */}
         <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 max-w-2xl">
           <div className="relative w-32 h-32 mb-4">
@@ -42,9 +42,9 @@ export default function Home() {
             />
           </div>
 
-          <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-black leading-[1.1]">
+          <h1 className="text-4xl lg:text-5xl font-bold tracking-tight text-black leading-[1.1]">
             Grow your internal <span className="text-primary">Gratitude</span>{" "}
-            Garden.
+            Garden. with <span className="text-primary">Deerly.</span>
           </h1>
 
           <p className="text-xl text-muted leading-relaxed max-w-lg">
@@ -53,19 +53,16 @@ export default function Home() {
             with Deerly.
           </p>
 
-          <div className="w-full max-w-md pt-4">
+          <div className="w-full pt-4">
             {!joined ? (
-              <form
-                onSubmit={handleSubmit}
-                className="flex flex-col sm:flex-row gap-3"
-              >
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <input
                   type="email"
                   placeholder="Enter your email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-6 py-4 rounded-full border border-black/10 bg-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-black placeholder:text-muted/70"
+                  className="px-6 py-4 rounded-full border border-black bg-white backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-black placeholder:text-muted/70"
                 />
                 <button
                   type="submit"
@@ -92,9 +89,9 @@ export default function Home() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold">You're on the list!</p>
+                  <p className="font-semibold">You&apos;re on the list!</p>
                   <p className="text-sm opacity-80">
-                    We'll notify you when we launch.
+                    We&apos;ll notify you when we launch.
                   </p>
                 </div>
               </div>
@@ -150,9 +147,9 @@ export default function Home() {
         {/* Right Visual */}
         <div className="flex-1 relative w-full flex justify-center lg:justify-end">
           {/* Decorative Elements */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-primary/20 via-gold/10 to-transparent blur-3xl rounded-full -zA-10" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-linear-to-tr from-primary/20 via-gold/10 to-transparent blur-3xl rounded-full -zA-10" />
 
-          <div className="relative z-10 w-[300px] sm:w-[350px] lg:w-[400px] aspect-[9/19.5] rotate-[-2deg] hover:rotate-0 transition-transform duration-500 ease-out">
+          <div className="relative z-10 w-[200px] sm:w-[250px] lg:w-[350px] aspect-[9/19.5] -rotate-2 hover:rotate-0 transition-transform duration-500 ease-out">
             <div className="absolute inset-0 bg-black rounded-[48px] shadow-2xl scale-[1.02] translate-y-2 opacity-20 blur-xl" />
             <div className="relative h-full w-full rounded-[40px] border-8 border-black overflow-hidden shadow-2xl bg-white">
               <Image
@@ -167,9 +164,9 @@ export default function Home() {
             <div className="absolute inset-0 rounded-[40px] ring-1 ring-black/5 pointer-events-none" />
           </div>
         </div>
-      </div>
+      </section>
 
-      <footer className="w-full max-w-7xl relative z-10 mt-[20px] lg:mt-0 flex justify-center lg:justify-start gap-6">
+      <footer className="w-full max-w-5xl flex justify-center lg:justify-start gap-6">
         <a
           href="/privacy"
           className="text-md hover:text-muted transition-colors underline decoration-dotted underline-offset-4"
