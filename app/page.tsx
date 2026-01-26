@@ -262,6 +262,12 @@ export default function Home() {
           >
             Terms of Use
           </a>
+          <a
+            href="/support"
+            className="text-sm text-muted hover:text-black transition-colors"
+          >
+            Support
+          </a>
         </div>
       </footer>
     </main>
