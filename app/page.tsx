@@ -105,43 +105,6 @@ export default function Home() {
               Get early access & exclusive founder rewards.
             </p>
           </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-8 w-full">
-            <div className="flex flex-col gap-1 sm:items-start items-center">
-              <span className="font-bold text-lg text-black">
-                Smart Evaluation
-              </span>
-              <span className="text-sm text-muted text-center sm:text-left">
-                Deep analysis of your gratitude
-              </span>
-            </div>
-            <div className="flex flex-col gap-1 sm:items-start items-center">
-              <span className="font-bold text-lg text-black">
-                Audio Entries
-              </span>
-              <span className="text-sm text-muted text-center sm:text-left">
-                Transcribe moments instantly
-              </span>
-            </div>
-            <div className="flex flex-col gap-1 sm:items-start items-center">
-              <span className="font-bold text-lg text-black">Home Widgets</span>
-              <span className="text-sm text-muted text-center sm:text-left">
-                Keep gratitude close
-              </span>
-            </div>
-            <div className="flex flex-col gap-1 sm:items-start items-center">
-              <span className="font-bold text-lg text-black">Tree Growth</span>
-              <span className="text-sm text-muted text-center sm:text-left">
-                Visualize your progress
-              </span>
-            </div>
-            <div className="flex flex-col gap-1 sm:items-start items-center col-span-2 sm:col-span-1">
-              <span className="font-bold text-lg text-black">Streaks</span>
-              <span className="text-sm text-muted text-center sm:text-left">
-                Build a lasting habit
-              </span>
-            </div>
-          </div>
         </div>
 
         {/* Right Visual */}
@@ -213,9 +176,8 @@ export default function Home() {
             <div className="space-y-4 px-4">
               <div className="space-y-1">
                 <h3 className="text-2xl font-bold text-black">
-                  Tree Growth & Streaks
+                  Tree Growth & Streaks Visualization
                 </h3>
-                <p className="text-primary font-medium">Visualization</p>
               </div>
               <p className="text-muted leading-relaxed">
                 Each entry nurtures your tree, turning consistency into a
@@ -236,10 +198,11 @@ export default function Home() {
             </div>
             <div className="space-y-4 px-4">
               <div className="space-y-1">
-                <h3 className="text-2xl font-bold text-black">Home Widgets</h3>
-                <p className="text-primary font-medium">
+                <h3 className="text-2xl font-bold text-black">
+                  Home Widgets
+                  <br />
                   Gratitude at a glance
-                </p>
+                </h3>
               </div>
               <p className="text-muted leading-relaxed">
                 Stay mindful throughout the day with widgets that surface your
