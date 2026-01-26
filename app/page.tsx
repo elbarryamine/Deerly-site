@@ -166,19 +166,140 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="w-full max-w-5xl flex justify-center lg:justify-start gap-6">
-        <a
-          href="/privacy"
-          className="text-md hover:text-muted transition-colors underline decoration-dotted underline-offset-4"
-        >
-          Privacy Policy
-        </a>
-        <a
-          href="/terms-of-use"
-          className="text-md hover:text-muted transition-colors underline decoration-dotted underline-offset-4"
-        >
-          Terms of Use
-        </a>
+      <section className="w-full max-w-5xl py-24 space-y-24">
+        <div className="text-center space-y-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-black tracking-tight">
+            Everything you need to grow.
+          </h2>
+          <p className="text-muted text-lg max-w-2xl mx-auto leading-relaxed">
+            Beautifully designed tools to help you cultivate mindfulness, track
+            progress, and build a lasting habit of gratitude.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+          {/* Feature 1 */}
+          <div className="flex flex-col gap-8 group">
+            <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-primary/5 border border-primary/10 shadow-sm group-hover:shadow-md transition-shadow">
+              <Image
+                src="/feature-1.png"
+                alt="Smart Evaluation & Audio Entries"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="space-y-4 px-4">
+              <h3 className="text-2xl font-bold text-black">
+                Smart Evaluation & Audio Entries
+              </h3>
+              <p className="text-muted leading-relaxed">
+                Write or record gratitude moments your way. Our AI analyzes
+                every entry to uncover emotional patterns, growth trends, and
+                insights into your evolving mindset.
+              </p>
+            </div>
+          </div>
+
+          {/* Feature 2 */}
+          <div className="flex flex-col gap-8 group">
+            <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-gold/5 border border-gold/10 shadow-sm group-hover:shadow-md transition-shadow">
+              <Image
+                src="/feature-2.png"
+                alt="Tree Growth & Streaks"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="space-y-4 px-4">
+              <div className="space-y-1">
+                <h3 className="text-2xl font-bold text-black">
+                  Tree Growth & Streaks
+                </h3>
+                <p className="text-primary font-medium">Visualization</p>
+              </div>
+              <p className="text-muted leading-relaxed">
+                Each entry nurtures your tree, turning consistency into a
+                beautiful visual symbol of your personal growth journey.
+              </p>
+            </div>
+          </div>
+
+          {/* Feature 3 */}
+          <div className="flex flex-col gap-8 group">
+            <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-lavender/40 border border-lavender shadow-sm group-hover:shadow-md transition-shadow">
+              <Image
+                src="/feature-3.png"
+                alt="Home Widgets"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="space-y-4 px-4">
+              <div className="space-y-1">
+                <h3 className="text-2xl font-bold text-black">Home Widgets</h3>
+                <p className="text-primary font-medium">
+                  Gratitude at a glance
+                </p>
+              </div>
+              <p className="text-muted leading-relaxed">
+                Stay mindful throughout the day with widgets that surface your
+                latest entries and reminders—right on your home screen.
+              </p>
+            </div>
+          </div>
+
+          {/* Feature 4 */}
+          <div className="flex flex-col gap-8 group">
+            <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-black/5 border border-black/10 shadow-sm group-hover:shadow-md transition-shadow">
+              <Image
+                src="/feature-4.png"
+                alt="See your gratitude in numbers"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="space-y-4 px-4">
+              <h3 className="text-2xl font-bold text-black text-pretty">
+                See your gratitude in numbers
+              </h3>
+              <p className="text-muted leading-relaxed">
+                Track moods, streaks, and consistency over time with clear
+                visuals that turn your gratitude practice into meaningful
+                insights.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="w-full max-w-5xl py-12 border-t border-black/5 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="flex items-center gap-2">
+          <div className="relative w-8 h-8 opacity-50">
+            <Image
+              src="/logo-transparent.png"
+              alt="Deerly"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <p className="text-sm text-muted">
+            © 2026 Deerly. All rights reserved.
+          </p>
+        </div>
+        <div className="flex gap-8">
+          <a
+            href="/privacy"
+            className="text-sm text-muted hover:text-black transition-colors"
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="/terms-of-use"
+            className="text-sm text-muted hover:text-black transition-colors"
+          >
+            Terms of Use
+          </a>
+        </div>
       </footer>
     </main>
   );
