@@ -20,6 +20,16 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Analytics (Microsoft Clarity)
+
+To enable session replay + heatmaps via [Microsoft Clarity](https://clarity.microsoft.com/), set this environment variable:
+
+```bash
+NEXT_PUBLIC_CLARITY_PROJECT_ID=YOUR_PROJECT_ID
+```
+
+Clarity is only loaded when `NEXT_PUBLIC_CLARITY_PROJECT_ID` is set.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
