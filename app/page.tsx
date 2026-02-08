@@ -181,7 +181,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
           {/* Feature 1 */}
           <div className="flex flex-col gap-8 group">
-            <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-primary/5 border border-primary/10 shadow-sm group-hover:shadow-md transition-shadow">
+            <div className="relative aspect-4/3 rounded-4xl overflow-hidden bg-primary/5 border border-primary/10 shadow-sm group-hover:shadow-md transition-shadow">
               <Image
                 src="/feature-1.png"
                 alt="Smart Evaluation & Audio Entries"
@@ -203,7 +203,7 @@ export default function Home() {
 
           {/* Feature 2 */}
           <div className="flex flex-col gap-8 group">
-            <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-gold/5 border border-gold/10 shadow-sm group-hover:shadow-md transition-shadow">
+            <div className="relative aspect-4/3 rounded-4xl overflow-hidden bg-gold/5 border border-gold/10 shadow-sm group-hover:shadow-md transition-shadow">
               <Image
                 src="/feature-2.png"
                 alt="Tree Growth & Streaks"
@@ -226,7 +226,7 @@ export default function Home() {
 
           {/* Feature 3 */}
           <div className="flex flex-col gap-8 group">
-            <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-lavender/40 border border-lavender shadow-sm group-hover:shadow-md transition-shadow">
+            <div className="relative aspect-4/3 rounded-4xl overflow-hidden bg-lavender/40 border border-lavender shadow-sm group-hover:shadow-md transition-shadow">
               <Image
                 src="/feature-3.png"
                 alt="Home Widgets"
@@ -251,7 +251,7 @@ export default function Home() {
 
           {/* Feature 4 */}
           <div className="flex flex-col gap-8 group">
-            <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-black/5 border border-black/10 shadow-sm group-hover:shadow-md transition-shadow">
+            <div className="relative aspect-4/3 rounded-4xl overflow-hidden bg-black/5 border border-black/10 shadow-sm group-hover:shadow-md transition-shadow">
               <Image
                 src="/feature-4.png"
                 alt="See your gratitude in numbers"

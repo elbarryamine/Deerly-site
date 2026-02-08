@@ -38,28 +38,25 @@ export default function TermsOfUse() {
           <section>
             <h2 className="text-3xl mb-6">1. Acceptance of Terms</h2>
             <p className="leading-relaxed">
-              These Terms of Use ("Terms") constitute a legally binding
-              agreement between you and Amine Elbarry ("we", "us", "our", or
-              "Developer") regarding your use of the Deerly mobile application
-              ("App"). By downloading, installing, accessing, or using the App,
-              you agree to be bound by these Terms.
+              These Terms of Use (&quot;Terms&quot;) constitute a legally
+              binding agreement between you and Amine Elbarry (&quot;we&quot;,
+              &quot;us&quot;, &quot;our&quot;, or &quot;Developer&quot;)
+              regarding your use of the Deerly mobile application
+              (&quot;App&quot;). By downloading, installing, accessing, or
+              using the App, you agree to be bound by these Terms.
             </p>
           </section>
 
           {/* 2. Description */}
           <section>
             <h2 className="text-3xl mb-6">2. Description of Service</h2>
-            <p className="mb-4 text-gray-700 italic">
-              Deerly is a mindfulness and gratitude companion that provides:
+            <p className="leading-relaxed">
+              Deerly is a mindfulness and gratitude companion that provides
+              daily gratitude journaling and reflections, personalized
+              mindfulness prompts based on your goals, secure cloud storage for
+              your entries to keep your data synced, and premium features
+              available through paid in-app purchases.
             </p>
-            <ul className="list-disc pl-6 space-y-3">
-              <li>Daily gratitude journaling and reflections.</li>
-              <li>Personalized mindfulness prompts based on your goals.</li>
-              <li>
-                Secure cloud storage for your entries to keep your data synced.
-              </li>
-              <li>Premium features available through paid in-app purchases.</li>
-            </ul>
           </section>
 
           {/* 3. Eligibility */}
@@ -73,47 +70,31 @@ export default function TermsOfUse() {
           </section>
 
           {/* 4. Subscriptions */}
-          <section className="bg-lavender/30 p-8 rounded-3xl border border-lavender">
-            <h2 className="text-2xl font-bold mb-4">
-              4. Premium Subscriptions
-            </h2>
-            <p className="mb-4">
+          <section>
+            <h2 className="text-3xl mb-6">4. Premium Subscriptions</h2>
+            <p className="leading-relaxed">
               Certain features require a paid subscription, processed through
-              Apple's App Store or Google Play Store.
+              Apple&apos;s App Store or Google Play Store. Subscriptions
+              automatically renew unless cancelled 24 hours before the period
+              ends. Payments are charged to your App Store or Play Store
+              account. Free trials may be offered; you will be charged after the
+              trial unless you cancel. In-app purchases and subscriptions are
+              managed securely within the App.
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-sm text-gray-600">
-              <li>
-                Subscriptions automatically renew unless cancelled 24 hours
-                before the period ends.
-              </li>
-              <li>
-                Payments are charged to your App Store or Play Store account.
-              </li>
-              <li>
-                Free trials may be offered; you will be charged after the trial
-                unless you cancel.
-              </li>
-              <li>
-                In-app purchases and subscriptions are managed securely within
-                the App.
-              </li>
-            </ul>
           </section>
 
           {/* 5. Medical Disclaimer */}
-          <section className="bg-red-50/50 p-8 rounded-3xl border border-red-100">
-            <h2 className="text-2xl font-bold mb-4 text-red-900">
-              5. Medical Disclaimer
-            </h2>
-            <p className="font-bold text-red-800 mb-2 underline">
+          <section>
+            <h2 className="text-3xl mb-6">5. Medical Disclaimer</h2>
+            <p className="font-bold mb-4 leading-relaxed">
               DEERLY IS NOT MEDICAL ADVICE.
             </p>
-            <p className="leading-relaxed text-red-700 mb-4">
+            <p className="leading-relaxed mb-4">
               The content provided is for informational and motivational
               purposes only. It is not a substitute for professional mental
               health advice, diagnosis, or treatment.
             </p>
-            <p className="text-sm text-red-600">
+            <p className="leading-relaxed text-gray-700">
               If you are experiencing a mental health crisis, please contact
               emergency services (911 in the US, 112 in the EU, or 3114 in
               France).
@@ -134,19 +115,18 @@ export default function TermsOfUse() {
           {/* 7. Prohibited Uses */}
           <section>
             <h2 className="text-3xl mb-6">7. Prohibited Uses</h2>
-            <p className="mb-4">You agree not to:</p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Reverse engineer or decompile the App.</li>
-              <li>Use the App for any illegal or unauthorized purpose.</li>
-              <li>Interfere with the App's servers or functionality.</li>
-              <li>Harass or harm others through the use of the Service.</li>
-            </ul>
+            <p className="leading-relaxed">
+              You agree not to reverse engineer or decompile the App, use the App
+              for any illegal or unauthorized purpose, interfere with the
+              App&apos;s servers or functionality, or harass or harm others
+              through the use of the Service.
+            </p>
           </section>
 
           {/* 8. Limitation of Liability */}
           <section>
             <h2 className="text-3xl mb-6">8. Limitation of Liability</h2>
-            <p className="leading-relaxed text-gray-600">
+            <p className="leading-relaxed text-gray-700">
               To the maximum extent permitted by law, the Developer shall not be
               liable for any indirect, incidental, or consequential damages
               arising out of your use of the App. For EU consumers, this does
@@ -156,28 +136,23 @@ export default function TermsOfUse() {
           </section>
 
           {/* 9. Contact */}
-          <footer className="bg-primary/5 p-10 rounded-[2rem] border border-primary/10">
-            <h2 className="text-3xl mb-4 text-primary">Contact us</h2>
-            <p className="leading-relaxed mb-6">
-              For questions regarding these terms, please contact us:
+          <footer>
+            <h2 className="text-3xl mb-6">Contact Us</h2>
+            <p className="leading-relaxed mb-4">
+              For questions regarding these terms, please contact us.
             </p>
-            <div className="space-y-2">
-              <p className="font-medium">
-                Email:{" "}
-                <a
-                  href="mailto:itselbarryamine@gmail.com"
-                  className="underline hover:text-primary transition-colors"
-                >
-                  itselbarryamine@gmail.com
-                </a>
-              </p>
-              <p>
-                <strong>Developer:</strong> Amine Elbarry
-              </p>
-              <p>
-                <strong>Location:</strong> France
-              </p>
-            </div>
+            <p className="leading-relaxed mb-2">
+              Email:{" "}
+              <a
+                href="mailto:itselbarryamine@gmail.com"
+                className="underline hover:text-primary transition-colors"
+              >
+                itselbarryamine@gmail.com
+              </a>
+            </p>
+            <p className="leading-relaxed">
+              Developer: Amine Elbarry. Location: France.
+            </p>
           </footer>
         </div>
       </div>
